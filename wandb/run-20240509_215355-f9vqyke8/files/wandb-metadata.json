@@ -1,0 +1,52 @@
+{
+    "os": "Windows-10-10.0.22631-SP0",
+    "python": "3.11.9",
+    "heartbeatAt": "2024-05-09T16:23:57.725070",
+    "startedAt": "2024-05-09T16:23:55.982917",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "<python with no main file>",
+    "codePathLocal": null,
+    "git": {
+        "remote": "https://github.com/Rah-M14/Echo-Deep-Learning-24.git",
+        "commit": "8a887289120b7dcdc3cd1da07b2f19c1d84efbf9"
+    },
+    "email": "rahath.m@yahoo.com",
+    "root": "D:/SEM6/DL/PROJ/BEGIN",
+    "host": "Parzival",
+    "username": "RahathM",
+    "executable": "c:\\Users\\rahat\\miniconda3\\envs\\orc\\python.exe",
+    "cpu_count": 8,
+    "cpu_count_logical": 16,
+    "cpu_freq": {
+        "current": 2304.0,
+        "min": 0.0,
+        "max": 2304.0
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 2304.0,
+            "min": 0.0,
+            "max": 2304.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 1863.0156211853027,
+            "used": 269.92681884765625
+        }
+    },
+    "gpu": "NVIDIA GeForce RTX 3070 Laptop GPU",
+    "gpu_count": 1,
+    "gpu_devices": [
+        {
+            "name": "NVIDIA GeForce RTX 3070 Laptop GPU",
+            "memory_total": 8589934592
+        }
+    ],
+    "memory": {
+        "total": 31.665363311767578
+    }
+}

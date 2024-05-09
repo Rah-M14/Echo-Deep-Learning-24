@@ -1,0 +1,75 @@
+
+Using device: cuda
+Loss function and optimizer set.
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torchaudio\functional\functional.py:584: UserWarning: At least one mel filterbank has all zero values. The value for `n_mels` (128) may be set too high. Or, the value for `n_freqs` (201) may be set too low.
+  warnings.warn(
+Example MFCC: tensor([[[-101.4708, -127.9692, -158.3688,  ...,    0.0000,    0.0000,
+             0.0000],
+         [-101.4708, -127.9692, -158.3688,  ...,    0.0000,    0.0000,
+             0.0000]],
+        [[  67.3429,  165.1966,  188.1160,  ...,    0.0000,    0.0000,
+             0.0000],
+         [  67.3429,  165.1966,  188.1160,  ...,    0.0000,    0.0000,
+             0.0000]],
+        [[ -41.1635, -107.1732, -125.1315,  ...,    0.0000,    0.0000,
+             0.0000],
+         [ -41.1635, -107.1732, -125.1315,  ...,    0.0000,    0.0000,
+             0.0000]],
+        ...,
+        [[  -4.3867,   -6.9110,   -1.4807,  ...,    0.0000,    0.0000,
+             0.0000],
+         [  -4.3867,   -6.9110,   -1.4807,  ...,    0.0000,    0.0000,
+             0.0000]],
+        [[   1.7835,   -7.4999,   -7.9818,  ...,    0.0000,    0.0000,
+             0.0000],
+         [   1.7835,   -7.4999,   -7.9818,  ...,    0.0000,    0.0000,
+             0.0000]],
+        [[  -8.7073,  -15.8100,   -8.2370,  ...,    0.0000,    0.0000,
+             0.0000],
+         [  -8.7073,  -15.8100,   -8.2370,  ...,    0.0000,    0.0000,
+             0.0000]]])
+Length of the converted MFCC: 28552
+Sample Index: 161
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 465
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 283
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 143
+MFCC Shape: torch.Size([40, 2, 12128])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 210
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 116
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 58
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 472
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 78
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 443
+MFCC Shape: torch.Size([40, 2, 9923])
+Sample Rate: 44100
+Length of the MFCC sequence: 2
+Sample Index: 481
+MFCC Shape: torch.Size([40, 2, 10585])
+Sample Rate: 44100
+Length of the MFCC sequence: 2

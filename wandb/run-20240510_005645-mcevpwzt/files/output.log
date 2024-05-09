@@ -1,0 +1,462 @@
+Batch index: 0
+Data items length: 3
+Data format error: Expected tuple of (inputs, targets)
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torchaudio\functional\functional.py:584: UserWarning: At least one mel filterbank has all zero values. The value for `n_mels` (128) may be set too high. Or, the value for `n_freqs` (201) may be set too low.
+  warnings.warn(
+Batch index: 0
+Data items length: 2
+Inputs shape: torch.Size([32, 2, 40, 9923]), Targets shape: torch.Size([32, 2, 1984500])
+Batch index: 0
+Data items length: 2
+Inputs shape: torch.Size([32, 2, 40, 9923]), Targets shape: torch.Size([32, 2, 1984500])
+Id:  304
+MFCC : tensor([[[ -69.7349,  -47.9001,  -66.4123,  ..., -120.3354, -124.3307,
+           -82.1634],
+         [ -22.3444,   23.7438,   32.6759,  ...,   77.4071,   89.1432,
+            47.9659],
+         [ -38.3182, -105.6796,  -92.3034,  ..., -117.6113, -105.7495,
+           -70.4554],
+         ...,
+         [  -9.3642,    1.9841,   -0.6204,  ...,   -7.0235,  -10.2618,
+            -5.7775],
+         [  -7.0126,   -1.3084,   -6.9699,  ...,   10.5559,   -5.8254,
+             3.0126],
+         [   1.0976,   -4.1799,   -2.6469,  ...,   -4.8758,   -7.9646,
+           -11.8383]],
+        [[ -72.3094,  -60.1609, -104.3900,  ..., -107.1197, -110.3449,
+           -91.6395],
+         [  30.0032,   49.9905,   43.7289,  ...,   81.3322,   90.9051,
+            75.6311],
+         [ -61.3833, -108.0003,  -99.8249,  ..., -111.8824, -103.2079,
+          -107.7346],
+         ...,
+         [   0.8592,   -3.7015,   -0.7321,  ...,    1.2025,   -1.7143,
+            -3.2251],
+         [ -14.7077,  -15.3955,   -5.6096,  ...,    4.8048,    4.2169,
+            -0.9971],
+         [  -8.8597,   -1.7563,    0.6542,  ...,   -8.2450,  -10.0977,
+            -9.5959]]])
+MFCC Shape: torch.Size([2, 40, 9923])
+Sample Rate 44100
+WaveNet(
+  (start_conv): Conv1d(40, 64, kernel_size=(1,), stride=(1,))
+  (res_blocks): ModuleList(
+    (0): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (1): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (2): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (3): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (4): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (5): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (6): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (7): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (8): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (9): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (10): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (11): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (12): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (13): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (14): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (15): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (16): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (17): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (18): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (19): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (20): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (21): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (22): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (23): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (24): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (25): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (26): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (27): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (28): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (29): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (30): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (31): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (32): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (33): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (34): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (35): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (36): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (37): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (38): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (39): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (40): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (41): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (42): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (43): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (44): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (45): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (46): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (47): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (skip_conv): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+  (end_conv): Sequential(
+    (0): ReLU()
+    (1): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    (2): ReLU()
+    (3): Conv1d(64, 1, kernel_size=(1,), stride=(1,))
+  )
+)
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\conv.py:306: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at ..\aten\src\ATen\native\cudnn\Conv_v8.cpp:919.)
+  return F.conv1d(input, weight, bias, self.stride,
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([32, 2, 1984500])) that is different to the input size (torch.Size([32, 1, 9923])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Output shape: torch.Size([32, 1, 9923])
+Target shape: torch.Size([32, 2, 1984500])
+<__main__.AudioDataset object at 0x000001A10088B990>
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torchaudio\functional\functional.py:584: UserWarning: At least one mel filterbank has all zero values. The value for `n_mels` (128) may be set too high. Or, the value for `n_freqs` (201) may be set too low.
+  warnings.warn(
+Id:  87
+MFCC : tensor([[[ -87.7423,  -96.5898,  -97.7423,  ..., -170.5528, -165.2589,
+          -132.3505],
+         [  55.9356,   94.7707,   93.3426,  ...,  148.8885,  142.5639,
+           106.1301],
+         [ -40.7713,  -47.4687,  -60.2584,  ...,  -50.5395,  -52.3773,
+           -40.6087],
+         ...,
+         [ -15.2485,  -11.4066,   -8.5597,  ...,  -14.9901,  -14.5559,
+            -5.6858],
+         [ -24.0918,   -4.9333,  -11.9836,  ...,   -2.0928,  -10.8533,
+           -13.3892],
+         [  -4.9820,  -16.0027,   -8.7322,  ...,   -3.9387,  -12.3368,
+           -15.6973]],
+        [[ -95.9203, -115.2943, -112.6718,  ..., -164.7869, -150.2970,
+          -125.5516],
+         [  44.0042,   74.0642,   80.2223,  ...,  134.6642,  151.8462,
+           112.9125],
+         [ -43.1688,  -55.4754,  -57.8584,  ...,  -47.9701,  -55.4978,
+           -57.4448],
+         ...,
+         [  -4.2984,   -3.6140,   -4.5559,  ...,  -11.7759,   -6.3895,
+           -10.1675],
+         [ -19.0336,   -1.1431,   -9.4252,  ...,  -11.8552,    0.9109,
+           -15.1631],
+         [ -16.7367,  -16.7028,  -10.0512,  ...,  -10.9447,  -12.4315,
+           -10.7286]]])
+MFCC Shape: torch.Size([2, 40, 9923])
+Sample Rate 44100
+Waveform:  tensor([[-0.0745, -0.0982, -0.0988,  ..., -0.1620, -0.1377, -0.0833],
+        [-0.0567, -0.0949, -0.1177,  ...,  0.0058,  0.0592,  0.0710]])
+Size of waveform  2
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torchaudio\functional\functional.py:584: UserWarning: At least one mel filterbank has all zero values. The value for `n_mels` (128) may be set too high. Or, the value for `n_freqs` (201) may be set too low.
+  warnings.warn(
+Id:  284
+MFCC : tensor([[[-203.2146, -276.0470, -283.2272,  ..., -166.1200, -156.7961,
+          -150.2331],
+         [  62.7920,  168.4421,  165.8025,  ...,  127.5164,  117.5173,
+           114.5518],
+         [  19.3066,   -1.6648,    1.3006,  ...,  -40.6641,  -37.8049,
+           -31.1877],
+         ...,
+         [  -8.2462,   -8.1291,  -20.3588,  ...,   -8.2070,  -16.9756,
+            -6.9577],
+         [ -21.0339,   -6.4702,  -10.2064,  ...,   -9.1710,  -17.0759,
+           -13.0259],
+         [ -17.9535,  -10.2674,   -7.0512,  ...,   -9.1419,  -10.0793,
+            -9.9412]],
+        [[-245.6719, -258.5136, -266.4637,  ..., -145.3964, -145.2919,
+          -137.5321],
+         [ 135.2978,  166.0235,  169.2020,  ...,  148.7815,  129.0422,
+           112.5785],
+         [  27.2783,  -20.1809,  -10.1448,  ...,  -41.8496,  -38.5474,
+           -13.3685],
+         ...,
+         [ -13.3346,  -12.0994,  -10.8215,  ...,  -16.2198,  -17.2456,
+            -1.3391],
+         [  -6.3257,  -11.3826,   -4.4571,  ...,  -21.8700,  -18.5969,
+           -23.2274],
+         [  -7.7570,  -11.3878,  -10.0220,  ...,   -2.6282,  -14.4475,
+           -16.9564]]])
+MFCC Shape: torch.Size([2, 40, 9923])
+Sample Rate 44100
+Waveform:  tensor([[ 0.1026,  0.1313,  0.1021,  ...,  0.0387,  0.0520,  0.0512],
+        [-0.0611, -0.0806, -0.0651,  ..., -0.1108, -0.1270, -0.1091]])
