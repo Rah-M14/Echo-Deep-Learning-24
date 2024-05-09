@@ -1,0 +1,5 @@
+
+Epoch 1/200, Loss: 3.101094795811561
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\optim\lr_scheduler.py:28: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn("The verbose parameter is deprecated. Please use get_last_lr() "
+cuda
