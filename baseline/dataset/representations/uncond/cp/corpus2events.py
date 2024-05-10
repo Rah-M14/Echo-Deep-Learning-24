@@ -218,7 +218,7 @@ def corpus2event_cp(path_infile, path_outfile):
 if __name__ == '__main__':
     # paths
     path_root = './ailab17k_from-scratch_cp'
-    path_indir = '../../../corpus'
+    path_indir = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/corpus_m'
     path_outdir = os.path.join(path_root, 'events')
     os.makedirs(path_outdir, exist_ok=True)
 
