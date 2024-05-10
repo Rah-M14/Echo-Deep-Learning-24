@@ -44,7 +44,7 @@ def traverse_dir(
 
 if __name__ == '__main__':
     # paths
-    path_root = 'ailab17k_from-scratch_cp'
+    path_root = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/midi_rep_cp'
     path_indir = os.path.join(path_root, 'events')
     path_outdir =  os.path.join(path_root, 'words')
     path_dictionary = os.path.join(path_root, 'dictionary.pkl')
