@@ -1,0 +1,23 @@
+WaveNet(
+  (one_hot): OneHot()
+  (input_conv): Conv1d(256, 64, kernel_size=(1,), stride=(1,))
+  (dilated_convs): ModuleList(
+    (0): Conv1d(64, 64, kernel_size=(2,), stride=(1,))
+    (1): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(2,))
+    (2): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(4,))
+    (3): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(8,))
+    (4): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(16,))
+    (5): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(32,))
+    (6): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(64,))
+    (7): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(128,))
+    (8): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(256,))
+    (9): Conv1d(64, 64, kernel_size=(2,), stride=(1,), dilation=(512,))
+  )
+  (residual_convs): ModuleList(
+    (0-9): 10 x Conv1d(32, 64, kernel_size=(1,), stride=(1,))
+  )
+  (skip_convs): ModuleList(
+    (0-9): 10 x Conv1d(32, 64, kernel_size=(1,), stride=(1,))
+  )
+  (post_conv1): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+  (post_conv2): Conv1d(64, 256, kernel_size=(1,), stride=(1,))

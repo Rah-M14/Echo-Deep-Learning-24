@@ -460,3 +460,356 @@ MFCC Shape: torch.Size([2, 40, 9923])
 Sample Rate 44100
 Waveform:  tensor([[ 0.1026,  0.1313,  0.1021,  ...,  0.0387,  0.0520,  0.0512],
         [-0.0611, -0.0806, -0.0651,  ..., -0.1108, -0.1270, -0.1091]])
+Size of waveform  torch.Size([2, 1984500])
+Batch index: 0
+Data items length: 2
+Inputs shape: torch.Size([32, 2, 40, 9923]), Targets shape: torch.Size([32, 9923])
+WaveNet(
+  (start_conv): Conv1d(40, 64, kernel_size=(1,), stride=(1,))
+  (res_blocks): ModuleList(
+    (0): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (1): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (2): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (3): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (4): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (5): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (6): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (7): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (8): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (9): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (10): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (11): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (12): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (13): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (14): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (15): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (16): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (17): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (18): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (19): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (20): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (21): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (22): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (23): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (24): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (25): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (26): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (27): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (28): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (29): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (30): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (31): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (32): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (33): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (34): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (35): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (36): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (37): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (38): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (39): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (40): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (41): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(4,), dilation=(2,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (42): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(8,), dilation=(4,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (43): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(16,), dilation=(8,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (44): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(32,), dilation=(16,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (45): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(64,), dilation=(32,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (46): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(128,), dilation=(64,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+    (47): ResidualBlock(
+      (dilated_conv): CausalConv1d(
+        (conv1): Conv1d(64, 128, kernel_size=(3,), stride=(1,), padding=(256,), dilation=(128,))
+      )
+      (conv_res): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+      (conv_skip): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    )
+  )
+  (skip_conv): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+  (end_conv): Sequential(
+    (0): ReLU()
+    (1): Conv1d(64, 64, kernel_size=(1,), stride=(1,))
+    (2): ReLU()
+    (3): Conv1d(64, 1, kernel_size=(1,), stride=(1,))
+  )
+)
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\conv.py:306: UserWarning: Plan failed with an OutOfMemoryError: CUDA out of memory. Tried to allocate 128.00 MiB. GPU  (Triggered internally at ..\aten\src\ATen\native\cudnn\Conv_v8.cpp:924.)

@@ -1,0 +1,12 @@
+
+Output Tensor Stats - Mean: 0.12353622913360596 Std Dev: 0.05773968994617462
+Output dimensions: torch.Size([1, 1, 1000])
+Audio file saved: sample_epoch_2.wav
+Test audio generated: test_output.wav
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([32, 9923])) that is different to the input size (torch.Size([32, 1, 9923])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\conv.py:306: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at ..\aten\src\ATen\native\cudnn\Conv_v8.cpp:919.)
+  return F.conv1d(input, weight, bias, self.stride,
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\loss.py:535: UserWarning: Using a target size (torch.Size([31, 9923])) that is different to the input size (torch.Size([31, 1, 9923])). This will likely lead to incorrect results due to broadcasting. Please ensure they have the same size.
+  return F.mse_loss(input, target, reduction=self.reduction)
+Average MSE on Test Set: 0.0435

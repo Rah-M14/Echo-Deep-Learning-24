@@ -1,0 +1,9 @@
+
+Epoch 1/100, Training Loss: 0.4592016488313675
+c:\Users\rahat\miniconda3\envs\orc\Lib\site-packages\torch\nn\modules\conv.py:306: UserWarning: Plan failed with a cudnnException: CUDNN_BACKEND_EXECUTION_PLAN_DESCRIPTOR: cudnnFinalize Descriptor Failed cudnn_status: CUDNN_STATUS_NOT_SUPPORTED (Triggered internally at ..\aten\src\ATen\native\cudnn\Conv_v8.cpp:919.)
+  return F.conv1d(input, weight, bias, self.stride,
+Epoch 1/100, Validation Loss: 0.040555788204073906
+Epoch 2/100, Training Loss: 0.04466426726430654
+Epoch 2/100, Validation Loss: 0.031842777505517006
+Epoch 3/100, Training Loss: 0.04463873952627182
+Epoch 3/100, Validation Loss: 0.033504027873277664
