@@ -70,56 +70,63 @@ def proc_one(path_infile, path_outfile):
     print(' >', path_infile)
     print(' >', path_outfile)
 
-    # load
-    midi_obj = miditoolkit.midi.parser.MidiFile(path_infile)
-    midi_obj_out = copy.deepcopy(midi_obj)
-    notes = midi_obj.instruments[0].notes
-    notes = sorted(notes, key=lambda x: (x.start, x.pitch))
+    try:
+        # load
+        midi_obj = miditoolkit.midi.parser.MidiFile(path_infile)
+        midi_obj_out = copy.deepcopy(midi_obj)
+        notes = midi_obj.instruments[0].notes
+        notes = sorted(notes, key=lambda x: (x.start, x.pitch))
 
-    # --- chord --- #
-    # exctract chord
-    chords = Dechorder.dechord(midi_obj)
-    markers = []
-    for cidx, chord in enumerate(chords):
-        if chord.is_complete():
-            chord_text = num2pitch[chord.root_pc] + '_' + chord.quality + '_' + num2pitch[chord.bass_pc]
+        # --- chord --- #
+        # exctract chord
+        chords = Dechorder.dechord(midi_obj)
+        markers = []
+        for cidx, chord in enumerate(chords):
+            if chord.is_complete():
+                chord_text = num2pitch[chord.root_pc] + '_' + chord.quality + '_' + num2pitch[chord.bass_pc]
+            else:
+                chord_text = 'N_N_N'
+            markers.append(Marker(time=int(cidx*480), text=chord_text))
+
+        # dedup
+        prev_chord = None
+        dedup_chords = []
+        for m in markers:
+            if m.text != prev_chord:
+                prev_chord = m.text
+                dedup_chords.append(m)
+
+        # --- global properties --- #
+        # global tempo
+        tempos = [b.tempo for b in midi_obj.tempo_changes][:40]
+        if len(tempos) > 0:
+            tempo_median = np.median(tempos)
+            global_bpm = int(tempo_median)
+            print(' > [global] bpm:', global_bpm)
+
+            # === save === #
+            # mkdir
+            fn = os.path.basename(path_outfile)
+            os.makedirs(path_outfile[:-len(fn)], exist_ok=True)
+
+            # markers
+            midi_obj_out.markers = dedup_chords
+            midi_obj_out.markers.insert(0, Marker(text='global_bpm_'+str(int(global_bpm)), time=0))
+
+            # save
+            midi_obj_out.instruments[0].name = 'piano'
+            midi_obj_out.dump(path_outfile)
         else:
-            chord_text = 'N_N_N'
-        markers.append(Marker(time=int(cidx*480), text=chord_text))
+            print('No valid tempo information found in', path_infile)
 
-    # dedup
-    prev_chord = None
-    dedup_chords = []
-    for m in markers:
-        if m.text != prev_chord:
-            prev_chord = m.text
-            dedup_chords.append(m)
-
-    # --- global properties --- #
-    # global tempo
-    tempos = [b.tempo for b in midi_obj.tempo_changes][:40]
-    tempo_median = np.median(tempos)
-    global_bpm =int(tempo_median)
-    print(' > [global] bpm:', global_bpm)
-    
-    # === save === #
-    # mkdir
-    fn = os.path.basename(path_outfile)
-    os.makedirs(path_outfile[:-len(fn)], exist_ok=True)
-
-    # markers
-    midi_obj_out.markers = dedup_chords
-    midi_obj_out.markers.insert(0, Marker(text='global_bpm_'+str(int(global_bpm)), time=0))
-
-    # save
-    midi_obj_out.instruments[0].name = 'piano'
-    midi_obj_out.dump(path_outfile)
+    except Exception as e:
+        print('Error processing', path_infile, ':', str(e))
 
 
 if __name__ == '__main__':
     # paths
-    path_indir = './midi_synchronized'
-    path_outdir = './midi_analyzed'
+    path_indir = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/midi_synchronized_m'
+    path_outdir = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/midi_analyzed_m'
     os.makedirs(path_outdir, exist_ok=True)
 
     # list files
@@ -128,21 +135,21 @@ if __name__ == '__main__':
         is_pure=True,
         is_sort=True)
     n_files = len(midifiles)
-    print('num fiels:', n_files)
+    print('num files:', n_files)
 
     # collect
     data = []
-    for fidx in range(n_files): 
+    for fidx in range(n_files):
         path_midi = midifiles[fidx]
         print('{}/{}'.format(fidx, n_files))
 
         # paths
         path_infile = os.path.join(path_indir, path_midi)
         path_outfile = os.path.join(path_outdir, path_midi)
-        
+
         # append
         data.append([path_infile, path_outfile])
 
-    # run, multi-thread
+    # run using multiprocessing
     pool = mp.Pool()
     pool.starmap(proc_one, data)
