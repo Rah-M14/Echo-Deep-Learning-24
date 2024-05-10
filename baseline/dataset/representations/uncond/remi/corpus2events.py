@@ -73,7 +73,6 @@ def create_event(name, value):
     return event
 
 
-# core functions
 def corpus2event_remi_v2(path_infile, path_outfile):
     '''
     <<< REMI v2 >>>
@@ -96,40 +95,45 @@ def corpus2event_remi_v2(path_infile, path_outfile):
         for timing in range(bar_step, bar_step + BAR_RESOL, TICK_RESOL):
             pos_events = []
 
-            # unpack
-            t_chords = data['chords'][timing]
-            t_tempos = data['tempos'][timing]
-            t_notes = data['notes'][0][timing] # piano track
+            # Check if 'notes' and 'chords' are present in data
+            if 'notes' in data and 'chords' in data:
+                # unpack chords
+                t_chords = data['chords'][timing] if timing in data['chords'] else []
+                
+                # unpack tempos
+                t_tempos = data['tempos'][timing] if timing in data['tempos'] else []
 
-            # chord
-            if len(t_chords):
-                root, quality, bass = t_chords[0].text.split('_')
-                pos_events.append(create_event('Chord', root+'_'+quality))
+                # unpack notes (piano track)
+                t_notes = data['notes'][0][timing] if len(data['notes']) > 0 and timing in data['notes'][0] else []
 
-            # tempo
-            if len(t_tempos):
-                pos_events.append(create_event('Tempo', t_tempos[0].tempo))
+                # chord
+                if t_chords:
+                    root, quality, bass = t_chords[0].text.split('_')
+                    pos_events.append(create_event('Chord', root + '_' + quality))
 
-            # note 
-            if len(t_notes):
-                for note in t_notes:
-                    pos_events.extend([
-                        create_event('Note_Pitch', note.pitch),
-                        create_event('Note_Velocity', note.velocity),
-                        create_event('Note_Duration', note.duration),
-                    ])
+                # tempo
+                if t_tempos:
+                    pos_events.append(create_event('Tempo', t_tempos[0].tempo))
+
+                # note
+                if t_notes:
+                    for note in t_notes:
+                        pos_events.extend([
+                            create_event('Note_Pitch', note.pitch),
+                            create_event('Note_Velocity', note.velocity),
+                            create_event('Note_Duration', note.duration),
+                        ])
 
             # collect & beat
-            if len(pos_events):
-                final_sequence.append(
-                    create_event('Beat', (timing-bar_step)//TICK_RESOL))
+            if pos_events:
+                final_sequence.append(create_event('Beat', (timing - bar_step) // TICK_RESOL))
                 final_sequence.extend(pos_events)
 
     # BAR ending
-    final_sequence.append(create_event('Bar', None))   
+    final_sequence.append(create_event('Bar', None))
 
     # EOS
-    final_sequence.append(create_event('EOS', None))   
+    final_sequence.append(create_event('EOS', None))
 
     # save
     fn = os.path.basename(path_outfile)
@@ -140,8 +144,8 @@ def corpus2event_remi_v2(path_infile, path_outfile):
 
 if __name__ == '__main__':
     # paths
-    path_root = './ailab17k_from-scratch_remi'
-    path_indir = '../../../corpus'
+    path_root = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/midi_rep_remi'
+    path_indir = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/corpus_m'
     path_outdir = os.path.join(path_root, 'events')
     os.makedirs(path_outdir, exist_ok=True)
 
@@ -152,25 +156,28 @@ if __name__ == '__main__':
         is_pure=True,
         is_sort=True)
     n_files = len(midifiles)
-    print('num fiels:', n_files)
+    print('num files:', n_files)
 
     # run all
     len_list = []
     for fidx in range(n_files):
         path_midi = midifiles[fidx]
-        print('{}/{}'.format(fidx, n_files))
+        print('{}/{}'.format(fidx + 1, n_files))
 
         # paths
         path_infile = os.path.join(path_indir, path_midi)
         path_outfile = os.path.join(path_outdir, path_midi)
 
         # proc
-        num_tokens = corpus2event_remi_v2(path_infile, path_outfile)
-        print(' > num_token:', num_tokens)
-        len_list.append(num_tokens)
+        try:
+            num_tokens = corpus2event_remi_v2(path_infile, path_outfile)
+            print(' > num_tokens:', num_tokens)
+            len_list.append(num_tokens)
+        except Exception as e:
+            print(f'Error processing {path_midi}: {e}')
 
-    # plot
+    # plot histogram
     plot_hist(
-        len_list, 
+        len_list,
         os.path.join(path_root, 'num_tokens.png')
     )

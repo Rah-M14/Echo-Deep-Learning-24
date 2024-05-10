@@ -3,14 +3,12 @@ import json
 import pickle
 import numpy as np
 
-
 TEST_AMOUNT = 50
 WINDOW_SIZE = 512
 GROUP_SIZE = 15
 MAX_LEN = WINDOW_SIZE * GROUP_SIZE
 COMPILE_TARGET = 'XL' # 'linear', 'XL'
 print('[config] MAX_LEN:', MAX_LEN)
-
 
 def traverse_dir(
         root_dir,
@@ -52,7 +50,7 @@ def traverse_dir(
 
 if __name__ == '__main__':
     # paths
-    path_root = 'ailab17k_from-scratch_remi'
+    path_root = '/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/midi_rep_remi'
     path_indir = os.path.join( path_root, 'words')
 
     # load dictionary
@@ -63,19 +61,9 @@ if __name__ == '__main__':
 
     # load all words
     wordfiles = traverse_dir(
-            path_indir,
-            extension=('npy'))
+        path_indir,
+        extension=('npy'))
 
-    # load dictionary
-    path_dictionary = os.path.join(path_root, 'dictionary.pkl')
-    event2word, word2event = pickle.load(open(path_dictionary, 'rb'))
-    eos_id = event2word['EOS_None']
-    print(' > eos_id:', eos_id)
-
-    # load all words
-    wordfiles = traverse_dir(
-            path_indir,
-            extension=('npy'))
     n_files = len(wordfiles)
 
     # init
@@ -120,7 +108,7 @@ if __name__ == '__main__':
     # sort by length (descending) 
     zipped = zip(seq_len_list, x_list, y_list, mask_list, num_groups_list, name_list)
     seq_len_list, x_list, y_list, mask_list, num_groups_list, name_list = zip( 
-                                    *sorted(zipped, key=lambda x: -x[0])) 
+        *sorted(zipped, key=lambda x: -x[0])) 
 
     print('\n\n[Finished]')
     print(' compile target:', COMPILE_TARGET)
@@ -134,14 +122,15 @@ if __name__ == '__main__':
         mask_final = np.array(mask_list)
     else:
         raise ValueError('Unknown target:', COMPILE_TARGET)
+
     num_samples = len(seq_len_list)
-    print(' >   count:', )
+    print(' > count:', num_samples)
     print(' > x_final:', x_final.shape)
     print(' > y_final:', y_final.shape)
     print(' > mask_final:', mask_final.shape)
     
     # split train/test
-    validation_songs = json.load(open('../validation_songs.json', 'r'))
+    validation_songs = json.load(open('baseline/dataset/representations/uncond/validation_songs.json', 'r'))
     train_idx = []
     test_idx = []
 
@@ -165,11 +154,13 @@ if __name__ == '__main__':
                 break
         if flag:
             train_idx.append(nidx)  
-    test_idx = np.array(test_idx)
-    train_idx = np.array(train_idx)
+
+    # Convert train_idx and test_idx to numpy arrays of integers
+    train_idx = np.array(train_idx, dtype=int)
+    test_idx = np.array(test_idx, dtype=int)
 
     # save validation map 
-    with open('valid_fn_idx_map.json', 'w') as f:
+    with open('/Users/atharvasawant/Downloads/Echo-Deep-Learning-24/baseline/dataset/midi_rep_remi/valid_fn_idx_map.json', 'w') as f:
         json.dump(fn_idx_map, f)
 
     # save train
@@ -196,4 +187,4 @@ if __name__ == '__main__':
 
     print('---')
     print(' > train x:', x_final[train_idx].shape)
-    print(' >  test x:', x_final[test_idx].shape)
+    print(' > test x:', x_final[test_idx].shape)
