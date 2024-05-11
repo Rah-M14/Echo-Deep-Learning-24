@@ -1,0 +1,30 @@
+@misc{wu2020transformerxl,
+      title={Transformer-XL Based Music Generation with Multiple Sequences of Time-valued Notes}, 
+      author={Xianchao Wu and Chengyuan Wang and Qinying Lei},
+      year={2020},
+      eprint={2007.07244},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD}
+}
+
+
+
+@misc{wang2020learning,
+      title={Learning Interpretable Representation for Controllable Polyphonic Music Generation}, 
+      author={Ziyu Wang and Dingsu Wang and Yixiao Zhang and Gus Xia},
+      year={2020},
+      eprint={2008.07122},
+      archivePrefix={arXiv},
+      primaryClass={cs.SD}
+}
+
+
+
+@misc{dhariwal2020jukebox,
+      title={Jukebox: A Generative Model for Music}, 
+      author={Prafulla Dhariwal and Heewoo Jun and Christine Payne and Jong Wook Kim and Alec Radford and Ilya Sutskever},
+      year={2020},
+      eprint={2005.00341},
+      archivePrefix={arXiv},
+      primaryClass={eess.AS}
+}

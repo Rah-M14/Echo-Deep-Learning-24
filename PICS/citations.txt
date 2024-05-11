@@ -1,0 +1,36 @@
+@book{Briot_2020, title={Deep Learning Techniques for Music Generation}, ISBN={9783319701639}, ISSN={2509-6583}, url={http://dx.doi.org/10.1007/978-3-319-70163-9}, DOI={10.1007/978-3-319-70163-9}, journal={Computational Synthesis and Creative Systems}, publisher={Springer International Publishing}, author={Briot, Jean-Pierre and Hadjeres, Gaëtan and Pachet, François-David}, year={2020} }
+
+@inproceedings{45774,title	= {WaveNet: A Generative Model for Raw Audio},author	= {Aäron van den Oord and Sander Dieleman and Heiga Zen and Karen Simonyan and Oriol Vinyals and Alexander Graves and Nal Kalchbrenner and Andrew Senior and Koray Kavukcuoglu},year	= {2016},URL	= {https://arxiv.org/abs/1609.03499},booktitle	= {Arxiv}}
+
+@inproceedings{45774,title	= {WaveNet: A Generative Model for Raw Audio},author	= {Aäron van den Oord and Sander Dieleman and Heiga Zen and Karen Simonyan and Oriol Vinyals and Alexander Graves and Nal Kalchbrenner and Andrew Senior and Koray Kavukcuoglu},year	= {2016},URL	= {https://arxiv.org/abs/1609.03499},booktitle	= {Arxiv}} 
+
+@article{b05401de-1158-3393-8c0c-d714b9468954,
+ ISSN = {00449202, 15535630},
+ URL = {http://www.jstor.org/stable/4098462},
+ author = {Richard K. Wolf},
+ journal = {Asian Music},
+ number = {2},
+ pages = {133--139},
+ publisher = {University of Texas Press},
+ reviewed-author = {Martin Clayton},
+ urldate = {2024-05-10},
+ volume = {34},
+ year = {2003}
+}
+
+@article{Manzelli2018ConditioningDG,
+  title={Conditioning Deep Generative Raw Audio Models for Structured Automatic Music},
+  author={Rachel Manzelli and Vijay Thakkar and Ali Siahkamari and Brian Kulis},
+  journal={ArXiv},
+  year={2018},
+  volume={abs/1806.09905},
+  url={https://api.semanticscholar.org/CorpusID:49434445}
+}
+
+@unknown{unknown,
+author = {Broek, Korneel},
+year = {2021},
+month = {01},
+pages = {},
+title = {MP3net: coherent, minute-long music generation from raw audio with a simple convolutional GAN}
+}
